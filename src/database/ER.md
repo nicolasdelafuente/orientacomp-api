@@ -6,6 +6,7 @@ erDiagram
     GENEROS {
         integer id_genero PK
         string nombre "Length 32, Not null, Unique"
+        boolean deleted "Default false"
         date createdAt "Not null"
         date updateAt "Not null"
     }
@@ -14,6 +15,7 @@ erDiagram
     DOCUMENTOS_TIPO {
         integer id PK
         string nombre "Length 32, Not null, Unique"
+        boolean deleted "Default false"
         date createdAt "Not null"
         date updateAt "Not null"
     }
@@ -22,6 +24,7 @@ erDiagram
     SEGUIMIENTOS_TIPO {
         integer id PK
         string nombre  "Length 32, Not null, Unique"
+        boolean deleted "Default false"
         date createdAt "Not null"
         date updateAt "Not null"
     }
@@ -29,6 +32,7 @@ erDiagram
     ROLES {
         integer id PK
         string nombre "Length 32, Not null, Unique"
+        boolean deleted "Default false"
         date createdAt "Not null"
         date updateAt "Not null"
     }
@@ -40,6 +44,7 @@ erDiagram
         string nombre "Length 32, Not null, Unique"
         string nacionalidad "Length 32, Not null, Unique"
         string iso  "Length 3, Not null, Unique"
+        boolean deleted "Default false"
         date createdAt "Not null"
         date updateAt "Not null"
     }
@@ -50,6 +55,7 @@ erDiagram
         integer id PK
         string nombre "Length 32, Not null, Unique"
         integer id_pais FK "Not null"
+        boolean deleted "Default false"
         date createdAt "Not null"
         date updateAt "Not null"
     }
@@ -59,6 +65,7 @@ erDiagram
         integer id PK
         string nombre "Length 32, Not null, Unique"
         integer id_provincia FK "Not null"
+        boolean deleted "Default false"
         date createdAt "Not null"
         date updateAt "Not null"
     }
@@ -67,6 +74,7 @@ erDiagram
     INSTITUTOS {
         integer id PK
         string nombre "Length 32, Not null, Unique"
+        boolean deleted "Default false"
         date createdAt "Not null"
         date updateAt "Not null"
     }
@@ -75,6 +83,7 @@ erDiagram
     CARRERAS {
         integer id PK
         string nombre "Length 32, Not null, Unique"
+        boolean deleted "Default false"
         date createdAt "Not null"
         date updateAt "Not null"
     }
@@ -84,6 +93,7 @@ erDiagram
         integer id PK
         string nombre "Length 32, Not null, Unique"
         string color  "Length 32, Not null, Unique"
+        boolean deleted "Default false"
         date createdAt "Not null"
         date updateAt "Not null"
     }
@@ -92,7 +102,8 @@ erDiagram
     CATEGORIAS {
         integer id PK
         string nombre "Length 32, Not null, Unique"
-        string color "Length 32, Not null, Unique"   
+        string color "Length 32, Not null, Unique"
+        boolean deleted "Default false"   
         date createdAt "Not null"
         date updateAt "Not null"
     }
@@ -105,6 +116,7 @@ erDiagram
         integer id_estados FK "Not null"
         integer id_orientado FK "Not null"
         integer id_seguidor FK "Not null"
+        boolean deleted "Default false"
         date createdAt "Not null"
         date updateAt "Not null"
     }
@@ -119,6 +131,7 @@ erDiagram
         string observacion "Length 2048, Not null, Unique"
         string accion
         integer id_almacenamiento FK
+        boolean deleted "Default false"
         date createdAt "Not null"
         date updateAt "Not null"
     }
@@ -136,6 +149,7 @@ erDiagram
         integer id_provincia FK "Not null"
         integer id_localidad FK "Not null"
         integer id_carrera FK "Not null"
+        boolean deleted "Default false"
         date createdAt "Not null"
         date updateAt "Not null"
     }
@@ -147,6 +161,7 @@ erDiagram
         integer id_persona FK "Not null"
         integer id_rol FK "Not null"
         string password "Length 16, Not null, Unique"
+        boolean deleted "Default false"
         date createdAt
         date updateAt
     }
@@ -155,5 +170,6 @@ erDiagram
         integer id PK
         string nombre "Length 32, Not null, Unique"
         date createdAt "Not null"
+        boolean deleted "Default false"
         date updateAt "Not null"
     }
