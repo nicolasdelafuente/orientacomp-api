@@ -7,8 +7,8 @@ const sequelize = new Sequelize(
 	database,
 	username,
 	password, {
-	host: host,
-	dialect: dialect,
+	host,
+	dialect,
 }
 );
 
