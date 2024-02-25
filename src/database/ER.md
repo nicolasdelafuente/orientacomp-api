@@ -152,6 +152,3 @@ erDiagram
         date createdAt "Not null"
         date updateAt "Not null"
     }
-
-
-
