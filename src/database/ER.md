@@ -116,6 +116,7 @@ erDiagram
         integer id_estados FK "Not null"
         integer id_orientado FK "Not null"
         integer id_seguidor FK "Not null"
+        string motivo "Length 2048, Not null, Unique"
         boolean deleted "Default false"
         date createdAt "Not null"
         date updateAt "Not null"
@@ -126,10 +127,10 @@ erDiagram
     ENTREVISTAS ||--|{ ALMACENAMIENTOS : almacena
     ENTREVISTAS {
         integer id PK
+        integer id_seguimiento FK "Not null"
         integer id_entrevistador FK "Not null"
-        string descripcion "Length 2048, Not null, Unique"
         string observacion "Length 2048, Not null, Unique"
-        string accion
+        string accion "Length 2048, Not null, Unique"
         integer id_almacenamiento FK
         boolean deleted "Default false"
         date createdAt "Not null"
@@ -145,6 +146,7 @@ erDiagram
         string documento "Length 32, Not null, Unique"
         string telefono "Length 32, Not null, Unique"
         integer id_genero FK "Not null"
+        string direccion "Length 128, Not null"
         integer id_pais FK "Not null"
         integer id_provincia FK "Not null"
         integer id_localidad FK "Not null"
