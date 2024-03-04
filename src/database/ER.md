@@ -171,6 +171,7 @@ erDiagram
     ALMACENAMIENTOS {
         integer id PK
         string nombre "Length 32, Not null, Unique"
+        stirng url "Length 32, Not null, Unique"
         date createdAt "Not null"
         boolean deleted "Default false"
         date updateAt "Not null"
