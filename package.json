@@ -5,6 +5,8 @@
   "main": "app.js",
   "scripts": {
     "dev": "nodemon ./app.js",
+    "dev:init": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
+    "dev:seeders": "node ./src/database/create-seeders.js",
     "dev:models":"node ./src/database/create-models"
   },
   "keywords": [],
