@@ -14,8 +14,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Localidad.init({
-    nombre: DataTypes.STRING,
-    id_provincia: DataTypes.INTEGER,
+    nombre: {
+    type: DataTypes.STRING,
+    allowNull: true
+  },
+    id_provincia: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
     deleted: DataTypes.BOOLEAN
   }, {
     sequelize,

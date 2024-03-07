@@ -14,11 +14,26 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Entrevista.init({
-    id_seguimiento: DataTypes.INTEGER,
-    id_entrevistador: DataTypes.INTEGER,
-    observacion: DataTypes.STRING,
-    accion: DataTypes.STRING,
-    id_almacenamiento: DataTypes.INTEGER,
+    id_seguimiento: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    id_entrevistador: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    observacion: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    accion: {
+  type: DataTypes.STRINGS,
+      allowNull: true
+    },
+    id_almacenamiento: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
     deleted: DataTypes.BOOLEAN
   }, {
     sequelize,

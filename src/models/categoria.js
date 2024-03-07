@@ -14,8 +14,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Categoria.init({
-    nombre: DataTypes.STRING,
-    color: DataTypes.STRING,
+    nombre: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    color: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
     deleted: DataTypes.BOOLEAN
   }, {
     sequelize,

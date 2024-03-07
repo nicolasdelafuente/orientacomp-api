@@ -14,9 +14,18 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Pais.init({
-    nombre: DataTypes.STRING,
-    nacionalidad: DataTypes.STRING,
-    iso: DataTypes.STRING,
+    nombre: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    nacionalidad: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    iso: {
+      type: DataTypes.STRING(3),
+      allowNull: true
+    },
     deleted: DataTypes.BOOLEAN
   }, {
     sequelize,

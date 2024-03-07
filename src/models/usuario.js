@@ -14,9 +14,18 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Usuario.init({
-    id_persona: DataTypes.INTEGER,
-    id_rol: DataTypes.INTEGER,
-    password: DataTypes.STRING,
+    id_persona: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    id_rol: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
     deleted: DataTypes.BOOLEAN
   }, {
     sequelize,

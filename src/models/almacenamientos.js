@@ -14,7 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Almacenamientos.init({
-    nombre: DataTypes.STRING,
+    nombre: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
     url: DataTypes.STRING,
     deleted: DataTypes.BOOLEAN
   }, {

@@ -14,8 +14,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Provincia.init({
-    nombre: DataTypes.STRING,
-    id_pais: DataTypes.INTEGER,
+    nombre: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    id_pais: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
     deleted: DataTypes.BOOLEAN
   }, {
     sequelize,

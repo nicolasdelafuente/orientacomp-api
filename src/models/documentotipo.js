@@ -14,7 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   DocumentoTipo.init({
-    nombre: DataTypes.STRING,
+    nombre: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
     deleted: DataTypes.BOOLEAN
   }, {
     sequelize,

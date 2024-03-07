@@ -5,7 +5,7 @@ erDiagram
     GENEROS ||--o{ PERSONAS : tiene
     GENEROS {
         integer id_genero PK
-        string nombre "Length 32, Not null, Unique"
+        string nombre "Not null, Unique"
         boolean deleted "Default false"
         date createdAt "Not null"
         date updateAt "Not null"
@@ -14,7 +14,7 @@ erDiagram
     DOCUMENTOS_TIPO ||--o{ PERSONAS : tiene
     DOCUMENTOS_TIPO {
         integer id PK
-        string nombre "Length 32, Not null, Unique"
+        string nombre "Not null, Unique"
         boolean deleted "Default false"
         date createdAt "Not null"
         date updateAt "Not null"
@@ -23,7 +23,7 @@ erDiagram
     SEGUIMIENTOS_TIPO ||--o{ SEGUIMIENTOS : tiene
     SEGUIMIENTOS_TIPO {
         integer id PK
-        string nombre  "Length 32, Not null, Unique"
+        string nombre  "Length 2048, Not null, Unique"
         boolean deleted "Default false"
         date createdAt "Not null"
         date updateAt "Not null"
@@ -31,7 +31,7 @@ erDiagram
 
     ROLES {
         integer id PK
-        string nombre "Length 32, Not null, Unique"
+        string nombre "Not null, Unique"
         boolean deleted "Default false"
         date createdAt "Not null"
         date updateAt "Not null"
@@ -41,8 +41,8 @@ erDiagram
     PAISES ||--o{ PERSONAS : tiene
     PAISES {
         integer id PK
-        string nombre "Length 32, Not null, Unique"
-        string nacionalidad "Length 32, Not null, Unique"
+        string nombre "Not null, Unique"
+        string nacionalidad "Not null, Unique"
         string iso  "Length 3, Not null, Unique"
         boolean deleted "Default false"
         date createdAt "Not null"
@@ -53,7 +53,7 @@ erDiagram
     PROVINCIAS ||--o{ PERSONAS : tiene
     PROVINCIAS {
         integer id PK
-        string nombre "Length 32, Not null, Unique"
+        string nombre "Not null, Unique"
         integer id_pais FK "Not null"
         boolean deleted "Default false"
         date createdAt "Not null"
@@ -63,7 +63,7 @@ erDiagram
     LOCALIDADES ||--o{ PERSONAS : tiene
     LOCALIDADES {
         integer id PK
-        string nombre "Length 32, Not null, Unique"
+        string nombre "Not null, Unique"
         integer id_provincia FK "Not null"
         boolean deleted "Default false"
         date createdAt "Not null"
@@ -73,7 +73,7 @@ erDiagram
     INSTITUTOS ||--o{ CARRERAS : tiene
     INSTITUTOS {
         integer id PK
-        string nombre "Length 32, Not null, Unique"
+        string nombre "Not null, Unique"
         boolean deleted "Default false"
         date createdAt "Not null"
         date updateAt "Not null"
@@ -82,7 +82,7 @@ erDiagram
     CARRERAS ||--o{ PERSONAS : tiene
     CARRERAS {
         integer id PK
-        string nombre "Length 32, Not null, Unique"
+        string nombre "Not null, Unique"
         boolean deleted "Default false"
         date createdAt "Not null"
         date updateAt "Not null"
@@ -91,8 +91,8 @@ erDiagram
     ESTADOS ||--o{ SEGUIMIENTOS : tiene
     ESTADOS {
         integer id PK
-        string nombre "Length 32, Not null, Unique"
-        string color  "Length 32, Not null, Unique"
+        string nombre "Not null, Unique"
+        string color  "Not null, Unique"
         boolean deleted "Default false"
         date createdAt "Not null"
         date updateAt "Not null"
@@ -101,8 +101,8 @@ erDiagram
     CATEGORIAS ||--o{ SEGUIMIENTOS : tiene
     CATEGORIAS {
         integer id PK
-        string nombre "Length 32, Not null, Unique"
-        string color "Length 32, Not null, Unique"
+        string nombre "Not null, Unique"
+        string color "Not null, Unique"
         boolean deleted "Default false"   
         date createdAt "Not null"
         date updateAt "Not null"
@@ -139,14 +139,14 @@ erDiagram
 
     PERSONAS {
         integer id PK
-        string nombre "Length 32, Not null, Unique"
-        string apellido "Length 32, Not null, Unique"
-        string email "Length 32, Not null, Unique"
+        string nombre "Not null, Unique"
+        string apellido "Not null, Unique"
+        string email "Not null, Unique"
         integer id_documento FK "Not null"
-        string documento "Length 32, Not null, Unique"
-        string telefono "Length 32, Not null, Unique"
+        string documento "Not null, Unique"
+        string telefono "Not null, Unique"
         integer id_genero FK "Not null"
-        string direccion "Length 128, Not null"
+        string direccion "Not null"
         integer id_pais FK "Not null"
         integer id_provincia FK "Not null"
         integer id_localidad FK "Not null"
@@ -162,7 +162,7 @@ erDiagram
         integer id PK
         integer id_persona FK "Not null"
         integer id_rol FK "Not null"
-        string password "Length 16, Not null, Unique"
+        string password "Not null, Unique"
         boolean deleted "Default false"
         date createdAt
         date updateAt
@@ -170,8 +170,8 @@ erDiagram
 
     ALMACENAMIENTOS {
         integer id PK
-        string nombre "Length 32, Not null, Unique"
-        stirng url "Length 32, Not null, Unique"
+        string nombre "Not null, Unique"
+        stirng url "Not null, Unique"
         date createdAt "Not null"
         boolean deleted "Default false"
         date updateAt "Not null"

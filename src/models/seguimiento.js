@@ -14,12 +14,30 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Seguimiento.init({
-    id_seguimiento_tipo: DataTypes.INTEGER,
-    id_categoria: DataTypes.INTEGER,
-    id_estado: DataTypes.INTEGER,
-    id_orientado: DataTypes.INTEGER,
-    id_seguidor: DataTypes.INTEGER,
-    motivo: DataTypes.STRING,
+    id_seguimiento_tipo: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    id_categoria: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    id_estado: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    id_orientado: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    id_seguidor: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    motivo: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
     deleted: DataTypes.BOOLEAN
   }, {
     sequelize,

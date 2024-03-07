@@ -10,13 +10,16 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       nombre: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       nacionalidad: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       iso: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(3),
+        allowNull: false
       },
       deleted: {
         type: Sequelize.BOOLEAN,

@@ -10,13 +10,16 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       id_persona: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false
       },
       id_rol: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false
       },
       password: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       deleted: {
         type: Sequelize.BOOLEAN,
