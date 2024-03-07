@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true
     },
     accion: {
-  type: DataTypes.STRINGS,
+  type: DataTypes.STRING,
       allowNull: true
     },
     id_almacenamiento: {
