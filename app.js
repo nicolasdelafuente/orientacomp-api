@@ -10,7 +10,9 @@ const port = process.env.PORT || 4000;
 const publicUrl = process.env.PUBLIC_URL || "http://127.0.0.1:"
 
 app.use(cors());
-app.use(router);
+app.use(express.json());
+app.use("/orientacomp-api/", require("./src/routes"));
+
 app.listen(port, () => {
     console.log(`The server has started successfully at ${publicUrl}${port}`);
 
