@@ -8,56 +8,56 @@ const { getItem, getItems, createItem, updateItem, deleteItem, restoreItem } = r
  */
 
 /**
- * Obtener todas las Institutos de la base de datos.
+ * Obtener todas los Institutos de la base de datos.
  * @route GET /institutos
  * @returns {Object} - Lista de Institutos.
- * @throws {Error} - Si hay un error al obtener las Institutos.
+ * @throws {Error} - Si hay un error al obtener los Institutos.
  */
 router.get("/", getItems);
 
 /**
- * Obtener una Instituto por ID.
+ * Obtener un Instituto por ID.
  * @route GET /institutos/:id
- * @param {string} :id - ID de la Instituto
- * @returns {Object} - La Instituto encontrada.
- * @throws {Error} - Si la Instituto no se encuentra o hay un error.
+ * @param {string} :id - ID del Instituto
+ * @returns {Object} - El Instituto encontrada.
+ * @throws {Error} - Si el Instituto no se encuentra o hay un error.
  */
 router.get("/:id", getItem);
 
 /**
- * Crear una nueva Instituto.
+ * Crear un nuevo Instituto.
  * @route POST /institutos
- * @param {Object} req.body - Datos de la nueva Instituto a crear.
- * @returns {Object} - La nueva Instituto creada.
- * @throws {Error} - Si hay un error al crear la Instituto.
+ * @param {Object} req.body - Datos del nuevo Instituto a crear.
+ * @returns {Object} - El nueva Instituto creado.
+ * @throws {Error} - Si hay un error al crear el Instituto.
  */
 router.post("/", createItem);
 
 /**
- * Actualizar una Instituto por ID.
+ * Actualizar un Instituto por ID.
  * @route PUT /institutos/:id
- * @param {string} :id - ID de la Instituto a actualizar
- * @param {Object} req.body - Datos actualizados de la Instituto
- * @returns {Object} - La Instituto actualizada.
- * @throws {Error} - Si la Instituto no se encuentra o hay un error al actualizar.
+ * @param {string} :id - ID del Instituto a actualizar
+ * @param {Object} req.body - Datos actualizados del Instituto
+ * @returns {Object} - El Instituto actualizada.
+ * @throws {Error} - Si el Instituto no se encuentra o hay un error al actualizar.
  */
 router.put("/:id", updateItem);
 
 /**
- * Eliminar una Instituto por ID.
+ * Eliminar un Instituto por ID.
  * @route DELETE /institutos/:id
- * @param {string} :id - ID de la Instituto a eliminar
+ * @param {string} :id - ID del Instituto a eliminar
  * @returns {Object} - Mensaje de éxito si se elimina correctamente.
- * @throws {Error} - Si la Instituto no se encuentra o hay un error al eliminar.
+ * @throws {Error} - Si el Instituto no se encuentra o hay un error al eliminar.
  */
 router.delete("/:id", deleteItem);
 
 /**
- * Restaurar una Instituto eliminada por ID.
+ * Restaurar un Instituto eliminado por ID.
  * @route PUT /institutos/restore/:id
- * @param {string} :id - ID de la Instituto a restaurar
+ * @param {string} :id - ID del Instituto a restaurar
  * @returns {Object} - Mensaje de éxito si se restaura correctamente.
- * @throws {Error} - Si la Instituto no se encuentra o hay un error al restaurar.
+ * @throws {Error} - Si el Instituto no se encuentra o hay un error al restaurar.
  */
 router.put("/restore/:id", restoreItem);
 

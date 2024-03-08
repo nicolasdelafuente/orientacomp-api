@@ -6,12 +6,12 @@ const { Instituto } = require("../models");
  */
 
 /**
- * Obtener todas las Institutos de la base de datos.
+ * Obtener todos los Institutos de la base de datos.
  * @function getItems
  * @param {Object} req - Objeto de solicitud de Express.
  * @param {Object} res - Objeto de respuesta de Express.
  * @returns {Object} - Lista de Institutos.
- * @throws {Error} - Si hay un error al obtener las Institutos.
+ * @throws {Error} - Si hay un error al obtener los Institutos.
  */
 const getItems = async (req, res) => {
     try {
@@ -29,12 +29,12 @@ const getItems = async (req, res) => {
 };
 
 /**
- * Obtener una Instituto por su ID.
+ * Obtener un Instituto por su ID.
  * @function getItem
  * @param {Object} req - Objeto de solicitud de Express con el parámetro 'id'.
  * @param {Object} res - Objeto de respuesta de Express.
- * @returns {Object} - La Instituto encontrada.
- * @throws {Error} - Si la Instituto no se encuentra o hay un error.
+ * @returns {Object} - El Instituto encontrada.
+ * @throws {Error} - Si el Instituto no se encuentra o hay un error.
  */
 const getItem = async (req, res) => {
     try {
@@ -53,12 +53,12 @@ const getItem = async (req, res) => {
 };
 
 /**
- * Crear una nueva Instituto.
+ * Crear un nuevo Instituto.
  * @function createItem
  * @param {Object} req - Objeto de solicitud de Express con los datos de la Instituto.
  * @param {Object} res - Objeto de respuesta de Express.
- * @returns {Object} - La nueva Instituto creada.
- * @throws {Error} - Si hay un error al crear la Instituto.
+ * @returns {Object} - El nuevo Instituto creado.
+ * @throws {Error} - Si hay un error al crear el Instituto.
  */
 const createItem = async (req, res) => {
     try {
@@ -71,12 +71,12 @@ const createItem = async (req, res) => {
 };
 
 /**
- * Actualizar una Instituto existente por su ID.
+ * Actualizar un Instituto existente por su ID.
  * @function updateItem
- * @param {Object} req - Objeto de solicitud de Express con el parámetro 'id' y los datos de la Instituto a actualizar.
+ * @param {Object} req - Objeto de solicitud de Express con el parámetro 'id' y los datos del Instituto a actualizar.
  * @param {Object} res - Objeto de respuesta de Express.
- * @returns {Object} - La Instituto actualizada.
- * @throws {Error} - Si la Instituto no se encuentra o hay un error al actualizar.
+ * @returns {Object} - El Instituto actualizada.
+ * @throws {Error} - Si el Instituto no se encuentra o hay un error al actualizar.
  */
 const updateItem = async (req, res) => {
     try {
@@ -97,12 +97,12 @@ const updateItem = async (req, res) => {
 };
 
 /**
- * Eliminar una Instituto por su ID (marcándola como eliminada).
+ * Eliminar un Instituto por su ID (marcándola como eliminada).
  * @function deleteItem
  * @param {Object} req - Objeto de solicitud de Express con el parámetro 'id'.
  * @param {Object} res - Objeto de respuesta de Express.
  * @returns {Object} - Mensaje de éxito si se elimina correctamente.
- * @throws {Error} - Si la Instituto no se encuentra o hay un error al eliminar.
+ * @throws {Error} - Si el Instituto no se encuentra o hay un error al eliminar.
  */
 const deleteItem = async (req, res) => {
     try {
@@ -123,12 +123,12 @@ const deleteItem = async (req, res) => {
 };
 
 /**
- * Restaurar una Instituto previamente eliminada por su ID.
+ * Restaurar un Instituto previamente eliminada por su ID.
  * @function restoreItem
  * @param {Object} req - Objeto de solicitud de Express con el parámetro 'id'.
  * @param {Object} res - Objeto de respuesta de Express.
  * @returns {Object} - Mensaje de éxito si se restaura correctamente.
- * @throws {Error} - Si la Instituto no se encuentra o hay un error al restaurar.
+ * @throws {Error} - Si el Instituto no se encuentra o hay un error al restaurar.
  */
 const restoreItem = async (req, res) => {
     try {
@@ -149,12 +149,12 @@ const restoreItem = async (req, res) => {
 };
 
 /**
- * Función para encontrar una Instituto por su ID.
+ * Función para encontrar un Instituto por su ID.
  * @function findItemById
- * @param {Number} id - ID de la Instituto a buscar.
- * @param {Boolean} deleted - Indica si la Instituto está eliminada.
- * @returns {Object} - La Instituto encontrada o null si no se encuentra.
- * @throws {Error} - Si hay un error al buscar la Instituto.
+ * @param {Number} id - ID del Instituto a buscar.
+ * @param {Boolean} deleted - Indica si el Instituto está eliminada.
+ * @returns {Object} - el Instituto encontrado o null si no se encuentra.
+ * @throws {Error} - Si hay un error al buscar el Instituto.
  */
 const findItemById = async (id, deleted) => {
     try {
