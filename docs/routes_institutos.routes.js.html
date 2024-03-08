@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: routes/carreras.routes.js</title>
+    <title>JSDoc: Source: routes/institutos.routes.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: routes/carreras.routes.js</h1>
+    <h1 class="page-title">Source: routes/institutos.routes.js</h1>
 
     
 
@@ -28,64 +28,64 @@
         <article>
             <pre class="prettyprint source linenums"><code>const express = require('express');
 const router = express.Router();
-const { getItem, getItems, createItem, updateItem, deleteItem, restoreItem } = require("../controllers/carrera.controllers.js");
+const { getItem, getItems, createItem, updateItem, deleteItem, restoreItem } = require("../controllers/institutos.controllers.js");
 
 /**
- * Express router para manejar las rutas relacionadas con Carreras.
- * @module routes/carreras
+ * Express router para manejar las rutas relacionadas con Institutos.
+ * @module routes/institutos
  */
 
 /**
- * Obtener todas las Carreras de la base de datos.
- * @route GET /carreras
- * @returns {Object} - Lista de Carreras.
- * @throws {Error} - Si hay un error al obtener las Carreras.
+ * Obtener todas las Institutos de la base de datos.
+ * @route GET /institutos
+ * @returns {Object} - Lista de Institutos.
+ * @throws {Error} - Si hay un error al obtener las Institutos.
  */
 router.get("/", getItems);
 
 /**
- * Obtener una Carrera por ID.
- * @route GET /carreras/:id
- * @param {string} :id - ID de la Carrera
- * @returns {Object} - La Carrera encontrada.
- * @throws {Error} - Si la Carrera no se encuentra o hay un error.
+ * Obtener una Instituto por ID.
+ * @route GET /institutos/:id
+ * @param {string} :id - ID de la Instituto
+ * @returns {Object} - La Instituto encontrada.
+ * @throws {Error} - Si la Instituto no se encuentra o hay un error.
  */
 router.get("/:id", getItem);
 
 /**
- * Crear una nueva Carrera.
- * @route POST /carreras
- * @param {Object} req.body - Datos de la nueva Carrera a crear.
- * @returns {Object} - La nueva Carrera creada.
- * @throws {Error} - Si hay un error al crear la Carrera.
+ * Crear una nueva Instituto.
+ * @route POST /institutos
+ * @param {Object} req.body - Datos de la nueva Instituto a crear.
+ * @returns {Object} - La nueva Instituto creada.
+ * @throws {Error} - Si hay un error al crear la Instituto.
  */
 router.post("/", createItem);
 
 /**
- * Actualizar una Carrera por ID.
- * @route PUT /carreras/:id
- * @param {string} :id - ID de la Carrera a actualizar
- * @param {Object} req.body - Datos actualizados de la Carrera
- * @returns {Object} - La Carrera actualizada.
- * @throws {Error} - Si la Carrera no se encuentra o hay un error al actualizar.
+ * Actualizar una Instituto por ID.
+ * @route PUT /institutos/:id
+ * @param {string} :id - ID de la Instituto a actualizar
+ * @param {Object} req.body - Datos actualizados de la Instituto
+ * @returns {Object} - La Instituto actualizada.
+ * @throws {Error} - Si la Instituto no se encuentra o hay un error al actualizar.
  */
 router.put("/:id", updateItem);
 
 /**
- * Eliminar una Carrera por ID.
- * @route DELETE /carreras/:id
- * @param {string} :id - ID de la Carrera a eliminar
+ * Eliminar una Instituto por ID.
+ * @route DELETE /institutos/:id
+ * @param {string} :id - ID de la Instituto a eliminar
  * @returns {Object} - Mensaje de éxito si se elimina correctamente.
- * @throws {Error} - Si la Carrera no se encuentra o hay un error al eliminar.
+ * @throws {Error} - Si la Instituto no se encuentra o hay un error al eliminar.
  */
 router.delete("/:id", deleteItem);
 
 /**
- * Restaurar una Carrera eliminada por ID.
- * @route PUT /carreras/restore/:id
- * @param {string} :id - ID de la Carrera a restaurar
+ * Restaurar una Instituto eliminada por ID.
+ * @route PUT /institutos/restore/:id
+ * @param {string} :id - ID de la Instituto a restaurar
  * @returns {Object} - Mensaje de éxito si se restaura correctamente.
- * @throws {Error} - Si la Carrera no se encuentra o hay un error al restaurar.
+ * @throws {Error} - Si la Instituto no se encuentra o hay un error al restaurar.
  */
 router.put("/restore/:id", restoreItem);
 

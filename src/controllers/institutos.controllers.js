@@ -1,49 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>JSDoc: Source: controllers/roles.controllers.js</title>
-
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
-</head>
-
-<body>
-
-<div id="main">
-
-    <h1 class="page-title">Source: controllers/roles.controllers.js</h1>
-
-    
-
-
-
-    
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>const { Rol } = require("../models");
+const { Instituto } = require("../models");
 
 /**
- * Controlador para manejar operaciones relacionadas con Roles.
- * @module controllers/roles
+ * Controlador para manejar operaciones relacionadas con Institutos.
+ * @module controllers/institutos
  */
 
 /**
- * Obtener todas las Roles de la base de datos.
+ * Obtener todas las Institutos de la base de datos.
  * @function getItems
  * @param {Object} req - Objeto de solicitud de Express.
  * @param {Object} res - Objeto de respuesta de Express.
- * @returns {Object} - Lista de Roles.
- * @throws {Error} - Si hay un error al obtener las Roles.
+ * @returns {Object} - Lista de Institutos.
+ * @throws {Error} - Si hay un error al obtener las Institutos.
  */
 const getItems = async (req, res) => {
     try {
-        const data = await Rol.findAll({
+        const data = await Instituto.findAll({
             where: {
                 deleted: false
             },
@@ -57,12 +29,12 @@ const getItems = async (req, res) => {
 };
 
 /**
- * Obtener una Rol por su ID.
+ * Obtener una Instituto por su ID.
  * @function getItem
  * @param {Object} req - Objeto de solicitud de Express con el parámetro 'id'.
  * @param {Object} res - Objeto de respuesta de Express.
- * @returns {Object} - La Rol encontrada.
- * @throws {Error} - Si la Rol no se encuentra o hay un error.
+ * @returns {Object} - La Instituto encontrada.
+ * @throws {Error} - Si la Instituto no se encuentra o hay un error.
  */
 const getItem = async (req, res) => {
     try {
@@ -81,16 +53,16 @@ const getItem = async (req, res) => {
 };
 
 /**
- * Crear una nueva Rol.
+ * Crear una nueva Instituto.
  * @function createItem
- * @param {Object} req - Objeto de solicitud de Express con los datos de la Rol.
+ * @param {Object} req - Objeto de solicitud de Express con los datos de la Instituto.
  * @param {Object} res - Objeto de respuesta de Express.
- * @returns {Object} - La nueva Rol creada.
- * @throws {Error} - Si hay un error al crear la Rol.
+ * @returns {Object} - La nueva Instituto creada.
+ * @throws {Error} - Si hay un error al crear la Instituto.
  */
 const createItem = async (req, res) => {
     try {
-        const data = await Rol.create(req.body);
+        const data = await Instituto.create(req.body);
         res.status(201).json({ success: true, data });
     } catch (e) {
         console.error('Error in createItem:', e);
@@ -99,12 +71,12 @@ const createItem = async (req, res) => {
 };
 
 /**
- * Actualizar una Rol existente por su ID.
+ * Actualizar una Instituto existente por su ID.
  * @function updateItem
- * @param {Object} req - Objeto de solicitud de Express con el parámetro 'id' y los datos de la Rol a actualizar.
+ * @param {Object} req - Objeto de solicitud de Express con el parámetro 'id' y los datos de la Instituto a actualizar.
  * @param {Object} res - Objeto de respuesta de Express.
- * @returns {Object} - La Rol actualizada.
- * @throws {Error} - Si la Rol no se encuentra o hay un error al actualizar.
+ * @returns {Object} - La Instituto actualizada.
+ * @throws {Error} - Si la Instituto no se encuentra o hay un error al actualizar.
  */
 const updateItem = async (req, res) => {
     try {
@@ -125,12 +97,12 @@ const updateItem = async (req, res) => {
 };
 
 /**
- * Eliminar una Rol por su ID (marcándola como eliminada).
+ * Eliminar una Instituto por su ID (marcándola como eliminada).
  * @function deleteItem
  * @param {Object} req - Objeto de solicitud de Express con el parámetro 'id'.
  * @param {Object} res - Objeto de respuesta de Express.
  * @returns {Object} - Mensaje de éxito si se elimina correctamente.
- * @throws {Error} - Si la Rol no se encuentra o hay un error al eliminar.
+ * @throws {Error} - Si la Instituto no se encuentra o hay un error al eliminar.
  */
 const deleteItem = async (req, res) => {
     try {
@@ -143,7 +115,7 @@ const deleteItem = async (req, res) => {
 
         await data.update({ deleted: true });
 
-        res.status(200).json({ success: true, message: `Rol item deleted successfully` });
+        res.status(200).json({ success: true, message: `Instituto item deleted successfully` });
     } catch (e) {
         console.error('Error in deleteItem:', e);
         res.status(500).json({ error: 'Internal Server Error' });
@@ -151,12 +123,12 @@ const deleteItem = async (req, res) => {
 };
 
 /**
- * Restaurar una Rol previamente eliminada por su ID.
+ * Restaurar una Instituto previamente eliminada por su ID.
  * @function restoreItem
  * @param {Object} req - Objeto de solicitud de Express con el parámetro 'id'.
  * @param {Object} res - Objeto de respuesta de Express.
  * @returns {Object} - Mensaje de éxito si se restaura correctamente.
- * @throws {Error} - Si la Rol no se encuentra o hay un error al restaurar.
+ * @throws {Error} - Si la Instituto no se encuentra o hay un error al restaurar.
  */
 const restoreItem = async (req, res) => {
     try {
@@ -169,7 +141,7 @@ const restoreItem = async (req, res) => {
 
         await data.update({ deleted: false });
 
-        res.status(200).json({ success: true, message: `Rol item restored successfully` });
+        res.status(200).json({ success: true, message: `Instituto item restored successfully` });
     } catch (e) {
         console.error('Error in restoreItem:', e);
         res.status(500).json({ error: 'Internal Server Error' });
@@ -177,16 +149,16 @@ const restoreItem = async (req, res) => {
 };
 
 /**
- * Función para encontrar una Rol por su ID.
+ * Función para encontrar una Instituto por su ID.
  * @function findItemById
- * @param {Number} id - ID de la Rol a buscar.
- * @param {Boolean} deleted - Indica si la Rol está eliminada.
- * @returns {Object} - La Rol encontrada o null si no se encuentra.
- * @throws {Error} - Si hay un error al buscar la Rol.
+ * @param {Number} id - ID de la Instituto a buscar.
+ * @param {Boolean} deleted - Indica si la Instituto está eliminada.
+ * @returns {Object} - La Instituto encontrada o null si no se encuentra.
+ * @throws {Error} - Si hay un error al buscar la Instituto.
  */
 const findItemById = async (id, deleted) => {
     try {
-        const data = await Rol.findOne({
+        const data = await Instituto.findOne({
             where: {
                 id,
                 deleted
@@ -204,26 +176,3 @@ const findItemById = async (id, deleted) => {
 };
 
 module.exports = { getItems, getItem, createItem, updateItem, deleteItem, restoreItem };
-</code></pre>
-        </article>
-    </section>
-
-
-
-
-</div>
-
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-controllers_carrera.html">controllers/carrera</a></li><li><a href="module-controllers_institutos.html">controllers/institutos</a></li><li><a href="module-controllers_roles.html">controllers/roles</a></li><li><a href="module-routes_carreras.html">routes/carreras</a></li><li><a href="module-routes_index.html">routes/index</a></li><li><a href="module-routes_institutos.html">routes/institutos</a></li><li><a href="module-routes_roles.html">routes/roles</a></li></ul>
-</nav>
-
-<br class="clear">
-
-<footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Mar 08 2024 18:04:57 GMT-0300 (hora estándar de Argentina)
-</footer>
-
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
-</body>
-</html>
