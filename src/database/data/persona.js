@@ -140,7 +140,7 @@ const personas = [
         id_localidad: 1,
         id_provincia: 2,
         id_pais: 9,
-        id_carrera: 32,
+        id_carrera: 31,
         createdAt: new Date(),
         updatedAt: new Date()
     },
@@ -156,7 +156,7 @@ const personas = [
         id_localidad: 1,
         id_provincia: 2,
         id_pais: 9,
-        id_carrera: 34,
+        id_carrera: 32,
         createdAt: new Date(),
         updatedAt: new Date()
     },
