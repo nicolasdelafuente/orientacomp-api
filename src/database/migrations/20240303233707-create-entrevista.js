@@ -11,7 +11,13 @@ module.exports = {
       },
       id_seguimiento: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
+        references: {
+          model: 'Seguimientos',
+          key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       id_entrevistador: {
         type: Sequelize.INTEGER,

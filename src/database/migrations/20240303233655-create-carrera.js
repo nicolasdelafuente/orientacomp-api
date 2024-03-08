@@ -15,7 +15,13 @@ module.exports = {
       },
       id_instituto: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: true,
+        references: {
+          model: 'Institutos', // Nombre de la tabla a la que hace referencia
+          key: 'id' // Nombre de la columna de la tabla referenciada
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       deleted: {
         type: Sequelize.BOOLEAN,

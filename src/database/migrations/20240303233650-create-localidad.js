@@ -15,7 +15,13 @@ module.exports = {
       },
       id_provincia: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
+        references: {
+          model: 'Provincias', // Nombre de la tabla a la que hace referencia
+          key: 'id' // Nombre de la columna de la tabla referenciada
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       deleted: {
         type: Sequelize.BOOLEAN,
