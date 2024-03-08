@@ -1,8 +1,8 @@
-const { Role } = require("../models");
+const { Rol } = require("../models");
 
 /**
  * Controlador para manejar operaciones relacionadas con Roles.
- * @module controllers/role
+ * @module controllers/roles
  */
 
 /**
@@ -15,7 +15,7 @@ const { Role } = require("../models");
  */
 const getItems = async (req, res) => {
     try {
-        const data = await Role.findAll({
+        const data = await Rol.findAll({
             where: {
                 deleted: false
             },
@@ -29,12 +29,12 @@ const getItems = async (req, res) => {
 };
 
 /**
- * Obtener una Role por su ID.
+ * Obtener una Rol por su ID.
  * @function getItem
  * @param {Object} req - Objeto de solicitud de Express con el parámetro 'id'.
  * @param {Object} res - Objeto de respuesta de Express.
- * @returns {Object} - La Role encontrada.
- * @throws {Error} - Si la Role no se encuentra o hay un error.
+ * @returns {Object} - La Rol encontrada.
+ * @throws {Error} - Si la Rol no se encuentra o hay un error.
  */
 const getItem = async (req, res) => {
     try {
@@ -53,16 +53,16 @@ const getItem = async (req, res) => {
 };
 
 /**
- * Crear una nueva Role.
+ * Crear una nueva Rol.
  * @function createItem
- * @param {Object} req - Objeto de solicitud de Express con los datos de la Role.
+ * @param {Object} req - Objeto de solicitud de Express con los datos de la Rol.
  * @param {Object} res - Objeto de respuesta de Express.
- * @returns {Object} - La nueva Role creada.
- * @throws {Error} - Si hay un error al crear la Role.
+ * @returns {Object} - La nueva Rol creada.
+ * @throws {Error} - Si hay un error al crear la Rol.
  */
 const createItem = async (req, res) => {
     try {
-        const data = await Role.create(req.body);
+        const data = await Rol.create(req.body);
         res.status(201).json({ success: true, data });
     } catch (e) {
         console.error('Error in createItem:', e);
@@ -71,12 +71,12 @@ const createItem = async (req, res) => {
 };
 
 /**
- * Actualizar una Role existente por su ID.
+ * Actualizar una Rol existente por su ID.
  * @function updateItem
- * @param {Object} req - Objeto de solicitud de Express con el parámetro 'id' y los datos de la Role a actualizar.
+ * @param {Object} req - Objeto de solicitud de Express con el parámetro 'id' y los datos de la Rol a actualizar.
  * @param {Object} res - Objeto de respuesta de Express.
- * @returns {Object} - La Role actualizada.
- * @throws {Error} - Si la Role no se encuentra o hay un error al actualizar.
+ * @returns {Object} - La Rol actualizada.
+ * @throws {Error} - Si la Rol no se encuentra o hay un error al actualizar.
  */
 const updateItem = async (req, res) => {
     try {
@@ -97,12 +97,12 @@ const updateItem = async (req, res) => {
 };
 
 /**
- * Eliminar una Role por su ID (marcándola como eliminada).
+ * Eliminar una Rol por su ID (marcándola como eliminada).
  * @function deleteItem
  * @param {Object} req - Objeto de solicitud de Express con el parámetro 'id'.
  * @param {Object} res - Objeto de respuesta de Express.
  * @returns {Object} - Mensaje de éxito si se elimina correctamente.
- * @throws {Error} - Si la Role no se encuentra o hay un error al eliminar.
+ * @throws {Error} - Si la Rol no se encuentra o hay un error al eliminar.
  */
 const deleteItem = async (req, res) => {
     try {
@@ -115,7 +115,7 @@ const deleteItem = async (req, res) => {
 
         await data.update({ deleted: true });
 
-        res.status(200).json({ success: true, message: `Role item deleted successfully` });
+        res.status(200).json({ success: true, message: `Rol item deleted successfully` });
     } catch (e) {
         console.error('Error in deleteItem:', e);
         res.status(500).json({ error: 'Internal Server Error' });
@@ -123,12 +123,12 @@ const deleteItem = async (req, res) => {
 };
 
 /**
- * Restaurar una Role previamente eliminada por su ID.
+ * Restaurar una Rol previamente eliminada por su ID.
  * @function restoreItem
  * @param {Object} req - Objeto de solicitud de Express con el parámetro 'id'.
  * @param {Object} res - Objeto de respuesta de Express.
  * @returns {Object} - Mensaje de éxito si se restaura correctamente.
- * @throws {Error} - Si la Role no se encuentra o hay un error al restaurar.
+ * @throws {Error} - Si la Rol no se encuentra o hay un error al restaurar.
  */
 const restoreItem = async (req, res) => {
     try {
@@ -141,7 +141,7 @@ const restoreItem = async (req, res) => {
 
         await data.update({ deleted: false });
 
-        res.status(200).json({ success: true, message: `Role item restored successfully` });
+        res.status(200).json({ success: true, message: `Rol item restored successfully` });
     } catch (e) {
         console.error('Error in restoreItem:', e);
         res.status(500).json({ error: 'Internal Server Error' });
@@ -149,16 +149,16 @@ const restoreItem = async (req, res) => {
 };
 
 /**
- * Función para encontrar una Role por su ID.
+ * Función para encontrar una Rol por su ID.
  * @function findItemById
- * @param {Number} id - ID de la Role a buscar.
- * @param {Boolean} deleted - Indica si la Role está eliminada.
- * @returns {Object} - La Role encontrada o null si no se encuentra.
- * @throws {Error} - Si hay un error al buscar la Role.
+ * @param {Number} id - ID de la Rol a buscar.
+ * @param {Boolean} deleted - Indica si la Rol está eliminada.
+ * @returns {Object} - La Rol encontrada o null si no se encuentra.
+ * @throws {Error} - Si hay un error al buscar la Rol.
  */
 const findItemById = async (id, deleted) => {
     try {
-        const data = await Role.findOne({
+        const data = await Rol.findOne({
             where: {
                 id,
                 deleted

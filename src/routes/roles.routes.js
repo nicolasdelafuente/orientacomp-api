@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getItem, getItems, createItem, updateItem, deleteItem, restoreItem } = require("../controllers/role.controllers.js");
+const { getItem, getItems, createItem, updateItem, deleteItem, restoreItem } = require("../controllers/roles.controllers.js");
 
 /**
  * Express router para manejar las rutas relacionadas con Roles.
