@@ -1,0 +1,23 @@
+{
+    "plugins": ["jsdoc-http-plugin"],
+    "source": {
+        "include": [
+            "./src/config/",
+            "./src/controllers/",
+            "./src/models/",
+            "./src/routes/"
+        ],
+        "exclude": ["node_modules/", "docs/", "logs/", "storage/", "database/"],
+        "includePattern": ".+\\.js(doc)?$"
+    },
+    "templates":{
+        "cleverLinks": false,
+        "monosepaceLinks": false
+    },
+    "opts": {
+        "recurse": "true",
+        "encoding": "utf8",
+        "destination": "./docs"
+    },
+    "sourceType": "module"
+}

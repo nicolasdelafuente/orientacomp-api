@@ -15,6 +15,7 @@ app.use("/orientacomp-api/", require("./src/routes"));
 
 app.listen(port, () => {
     console.log(`The server has started successfully at ${publicUrl}${port}`);
+    console.log(`The documentation is available at ${publicUrl}5500/docs/index.html`);
 
     sequelize.sync({ force: false }).then(() => {
         console.log("The connection has been established");
