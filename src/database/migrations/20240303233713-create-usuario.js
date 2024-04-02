@@ -12,6 +12,7 @@ module.exports = {
       id_persona: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        unique: true,
         references: {
           model: 'Personas',
           key: 'id'
