@@ -9,7 +9,7 @@
 
 const { validationResult } = require("express-validator");
 
-const validateResults = (req, res, next) => {
+const validateResult = (req, res, next) => {
     try {
         validationResult(req).throw();
         return next();
@@ -19,4 +19,4 @@ const validateResults = (req, res, next) => {
     }
 }
 
-module.exports = { validateResults };
+module.exports = { validateResult };
