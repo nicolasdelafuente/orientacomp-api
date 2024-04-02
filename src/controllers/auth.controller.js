@@ -75,7 +75,7 @@ const loginControl = async (req, res) => {
         delete userUsuarios.dataValues.createdAt;
         delete userUsuarios.dataValues.updatedAt;
         const data = {
-            userUsuarios,
+            "user": userUsuarios,
             token: await tokenSign(userUsuarios)
         }
 
