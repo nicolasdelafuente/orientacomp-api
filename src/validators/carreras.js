@@ -1,5 +1,5 @@
 const { check } = require('express-validator');
-const { validateResults } = require("../utils/handleValidator.js");
+const { validateResult } = require("../utils/handleValidator.js");
 
 const validatorCreateItem = [
     check('nombre')
@@ -14,7 +14,7 @@ const validatorCreateItem = [
         console.log(res.statusCode);
         console.log(res.headers);
 
-        validateResults(req, res, next);
+        validateResult(req, res, next);
     }
 ];
 
