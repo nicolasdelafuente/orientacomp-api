@@ -16,48 +16,48 @@ const { getItem, getItems, createItem, updateItem, deleteItem, restoreItem } = r
 router.get("/", getItems);
 
 /**
- * Obtener una Role por ID.
+ * Obtener una Localidad por ID.
  * @route GET /localidades/:id
- * @param {string} :id - ID de la Role
- * @returns {Object} - La Role encontrada.
- * @throws {Error} - Si la Role no se encuentra o hay un error.
+ * @param {string} :id - ID de la Localidad
+ * @returns {Object} - La Localidad encontrada.
+ * @throws {Error} - Si la Localidad no se encuentra o hay un error.
  */
 router.get("/:id", getItem);
 
 /**
- * Crear una nueva Role.
+ * Crear una nueva Localidad.
  * @route POST /localidades
- * @param {Object} req.body - Datos de la nueva Role a crear.
- * @returns {Object} - La nueva Role creada.
- * @throws {Error} - Si hay un error al crear la Role.
+ * @param {Object} req.body - Datos de la nueva Localidad a crear.
+ * @returns {Object} - La nueva Localidad creada.
+ * @throws {Error} - Si hay un error al crear la Localidad.
  */
 router.post("/", createItem);
 
 /**
- * Actualizar una Role por ID.
+ * Actualizar una Localidad por ID.
  * @route PUT /localidades/:id
- * @param {string} :id - ID de la Role a actualizar
- * @param {Object} req.body - Datos actualizados de la Role
- * @returns {Object} - La Role actualizada.
- * @throws {Error} - Si la Role no se encuentra o hay un error al actualizar.
+ * @param {string} :id - ID de la Localidad a actualizar
+ * @param {Object} req.body - Datos actualizados de la Localidad
+ * @returns {Object} - La Localidad actualizada.
+ * @throws {Error} - Si la Localidad no se encuentra o hay un error al actualizar.
  */
 router.put("/:id", updateItem);
 
 /**
- * Eliminar una Role por ID.
+ * Eliminar una Localidad por ID.
  * @route DELETE /localidades/:id
- * @param {string} :id - ID de la Role a eliminar
+ * @param {string} :id - ID de la Localidad a eliminar
  * @returns {Object} - Mensaje de éxito si se elimina correctamente.
- * @throws {Error} - Si la Role no se encuentra o hay un error al eliminar.
+ * @throws {Error} - Si la Localidad no se encuentra o hay un error al eliminar.
  */
 router.delete("/:id", deleteItem);
 
 /**
- * Restaurar una Role eliminada por ID.
+ * Restaurar una Localidad eliminada por ID.
  * @route PUT /localidades/restore/:id
- * @param {string} :id - ID de la Role a restaurar
+ * @param {string} :id - ID de la Localidad a restaurar
  * @returns {Object} - Mensaje de éxito si se restaura correctamente.
- * @throws {Error} - Si la Role no se encuentra o hay un error al restaurar.
+ * @throws {Error} - Si la Localidad no se encuentra o hay un error al restaurar.
  */
 router.put("/restore/:id", restoreItem);
 
