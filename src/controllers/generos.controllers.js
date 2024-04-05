@@ -1,8 +1,8 @@
 const { Genero } = require("../models");
 
 /**
- * Controlador para manejar operaciones relacionadas con Genero.
- * @module controllers/genero
+ * Controlador para manejar operaciones relacionadas con Roles.
+ * @module controllers/generos
  */
 
 /**
@@ -10,8 +10,8 @@ const { Genero } = require("../models");
  * @function getItems
  * @param {Object} req - Objeto de solicitud de Express.
  * @param {Object} res - Objeto de respuesta de Express.
- * @returns {Object} - Lista de Roles.
- * @throws {Error} - Si hay un error al obtener las Roles.
+ * @returns {Object} - Lista de Generos.
+ * @throws {Error} - Si hay un error al obtener los Generos.
  */
 const getItems = async (req, res) => {
     try {
@@ -29,12 +29,12 @@ const getItems = async (req, res) => {
 };
 
 /**
- * Obtener un genero por su ID.
+ * Obtener un Genero por su ID.
  * @function getItem
  * @param {Object} req - Objeto de solicitud de Express con el parámetro 'id'.
  * @param {Object} res - Objeto de respuesta de Express.
- * @returns {Object} - La Rol encontrada.
- * @throws {Error} - Si la Rol no se encuentra o hay un error.
+ * @returns {Object} - El Genero encontrada.
+ * @throws {Error} - Si el Genero no se encuentra o hay un error.
  */
 const getItem = async (req, res) => {
     try {
@@ -53,12 +53,12 @@ const getItem = async (req, res) => {
 };
 
 /**
- * Crear un nuevo genero.
+ * Crear una nueva Genero.
  * @function createItem
- * @param {Object} req - Objeto de solicitud de Express con los datos del genero.
+ * @param {Object} req - Objeto de solicitud de Express con los datos de la Genero.
  * @param {Object} res - Objeto de respuesta de Express.
- * @returns {Object} - Nuevo Genero creado.
- * @throws {Error} - Si hay un error al crear el genero.
+ * @returns {Object} - La nueva Genero creada.
+ * @throws {Error} - Si hay un error al crear la Genero.
  */
 const createItem = async (req, res) => {
     try {
@@ -71,12 +71,12 @@ const createItem = async (req, res) => {
 };
 
 /**
- * Actualizar un genero existente por su ID.
+ * Actualizar una Genero existente por su ID.
  * @function updateItem
- * @param {Object} req - Objeto de solicitud de Express con el parámetro 'id' y los datos del genero a actualizar.
+ * @param {Object} req - Objeto de solicitud de Express con el parámetro 'id' y los datos de la Genero a actualizar.
  * @param {Object} res - Objeto de respuesta de Express.
- * @returns {Object} - Genero actualizado.
- * @throws {Error} - Si el genero no se encuentra o hay un error al actualizar.
+ * @returns {Object} - La Genero actualizada.
+ * @throws {Error} - Si la Genero no se encuentra o hay un error al actualizar.
  */
 const updateItem = async (req, res) => {
     try {
@@ -97,12 +97,12 @@ const updateItem = async (req, res) => {
 };
 
 /**
- * Eliminar un Genero por su ID (marcándola como eliminada).
+ * Eliminar una Genero por su ID (marcándola como eliminada).
  * @function deleteItem
  * @param {Object} req - Objeto de solicitud de Express con el parámetro 'id'.
  * @param {Object} res - Objeto de respuesta de Express.
  * @returns {Object} - Mensaje de éxito si se elimina correctamente.
- * @throws {Error} - Si el Genero no se encuentra o hay un error al eliminar.
+ * @throws {Error} - Si la Genero no se encuentra o hay un error al eliminar.
  */
 const deleteItem = async (req, res) => {
     try {
@@ -123,12 +123,12 @@ const deleteItem = async (req, res) => {
 };
 
 /**
- * Restaurar un Genero previamente eliminada por su ID.
+ * Restaurar una Genero previamente eliminada por su ID.
  * @function restoreItem
  * @param {Object} req - Objeto de solicitud de Express con el parámetro 'id'.
  * @param {Object} res - Objeto de respuesta de Express.
  * @returns {Object} - Mensaje de éxito si se restaura correctamente.
- * @throws {Error} - Si el Genero no se encuentra o hay un error al restaurar.
+ * @throws {Error} - Si la Genero no se encuentra o hay un error al restaurar.
  */
 const restoreItem = async (req, res) => {
     try {
@@ -149,12 +149,12 @@ const restoreItem = async (req, res) => {
 };
 
 /**
- * Función para encontrar un genero por su ID.
+ * Función para encontrar una Genero por su ID.
  * @function findItemById
- * @param {Number} id - ID del Genero a buscar.
- * @param {Boolean} deleted - Indica si el genero está eliminada.
- * @returns {Object} - Genero encontrada o null si no se encuentra.
- * @throws {Error} - Si hay un error al buscar el genero.
+ * @param {Number} id - ID de la Genero a buscar.
+ * @param {Boolean} deleted - Indica si la Genero está eliminada.
+ * @returns {Object} - La Genero encontrada o null si no se encuentra.
+ * @throws {Error} - Si hay un error al buscar la Genero.
  */
 const findItemById = async (id, deleted) => {
     try {
