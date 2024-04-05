@@ -10,7 +10,7 @@ const validatorCreateItem = [
         .exists().withMessage('El apellido es obligatorio')
         .notEmpty().withMessage('El apellido no puede estar vacío')
         .isLength({ min: 2, max: 32 }).withMessage('El apellido debe tener entre 2 y 32 caracteres'),
-    check('apellido')
+    check('email')
         .exists().withMessage('El email es obligatorio')
         .notEmpty().withMessage('El email no puede estar vacío')
         .isEmail().withMessage('Debe ingresar un correo electrónico válido'),
