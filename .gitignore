@@ -1,0 +1,8 @@
+# Ignore the directory
+node_modules/
+
+# Ignore the .env file
+.env
+.env.development
+.env.testing
+.env.production
