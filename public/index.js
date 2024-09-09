@@ -1,5 +1,8 @@
-// Esto es una prueba
+import server from '../src/server.js';
 
-let hello = 'hello:';
+const HOST = process.env.HOST || 'localhost';
+const PORT = process.env.PORT || 4000;
 
-console.log(`${hello}, World!`);
+server.listen(PORT, () => {
+  console.log(`Server running at http://${HOST}:${PORT}`);
+});
