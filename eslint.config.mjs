@@ -3,7 +3,7 @@ import pluginJs from '@eslint/js';
 import eslintPluginPrettier from 'eslint-plugin-prettier/recommended';
 
 export default [
-  { files: ['**/*.js'], languageOptions: { sourceType: 'commonjs' } },
+  { files: ['**/*.js'], languageOptions: { sourceType: 'module' } },
   { languageOptions: { globals: globals.node } },
   { ignores: ['node_modules/'] },
   pluginJs.configs.recommended,
