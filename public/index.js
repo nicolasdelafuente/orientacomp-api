@@ -2,7 +2,7 @@
 
 let hello = "hello";
 
-console.log('Hello, World!');
+console.log(`${hello}, World!`);
 
 a = !true;
 
