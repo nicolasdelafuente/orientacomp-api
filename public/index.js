@@ -1,11 +1,5 @@
-// Eeto s un comentario
+// Esto es una prueba
 
-let hello = "hello";
+let hello = 'hello:';
 
 console.log(`${hello}, World!`);
-
-a = !true;
-
-if (!a) {
-  console.log('Hello, World!');
-}
