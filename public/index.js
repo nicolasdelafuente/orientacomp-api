@@ -1,4 +1,4 @@
-import server from '../src/server.js';
+const server = require('../src/server.js');
 
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 4000;

@@ -1,6 +1,7 @@
 # Ignore the directory
 .husky/
 node_modules/
+.vscode/
 
 # Ignore the .env file
 .env

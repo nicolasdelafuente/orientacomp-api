@@ -2,7 +2,6 @@
   "name": "orientacomp-api",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "dev": "dotenv -e .env.development nodemon public/index.js",
     "format": "prettier --write .",
