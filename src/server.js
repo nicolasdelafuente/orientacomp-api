@@ -1,6 +1,6 @@
 const express = require('express');
 const sequelize = require('./config/database.js');
-//const router = require('./routes/index.js');
+//Habilitar require const router = require('./routes/index.js');
 
 const BASEROUTE = process.env.BASE_ROUTE;
 const ENV = process.env.ENV;
@@ -31,7 +31,7 @@ connectDB();
 const server = express();
 
 server.use(express.json());
-//server.use(FULLBASEROUTE, router);
+//APUNtar a router server.use(FULLBASEROUTE, router);
 server.get(FULLBASEROUTE, (req, res) => {
   res.send({
     msg: 'Message from API',
