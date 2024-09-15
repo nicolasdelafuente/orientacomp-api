@@ -21,11 +21,11 @@ const Seguimiento = sequelize.define(
       type: DataTypes.BIGINT,
       allowNull: false,
     },
-    id_orienatdo: {
+    id_orientado: {
       type: DataTypes.BIGINT,
       allowNull: false,
     },
-    id_orienatdor: {
+    id_orientador: {
       type: DataTypes.BIGINT,
       allowNull: false,
     },
