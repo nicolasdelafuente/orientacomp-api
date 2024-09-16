@@ -1,4 +1,4 @@
-const Pais = require('../models/Pais.model');
+const Pais = require('../database/models/Pais.model');
 
 const Model = Pais;
 
