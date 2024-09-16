@@ -31,7 +31,7 @@ const Carrera = sequelize.define(
     },
   },
   {
-    tableName: 'Carrerras',
+    tableName: 'Carreras',
     timestamps: true,
     paranoid: true,
     underscored: true,
