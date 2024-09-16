@@ -1,36 +1,20 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database.js');
 
-const Seguimiento = sequelize.define(
-  'Seguimiento',
+const Carrera = sequelize.define(
+  'Carrera',
   {
     id: {
       type: DataTypes.BIGINT,
       autoIncrement: true,
       primaryKey: true,
     },
-    id_tipo_de_seguimiento: {
-      type: DataTypes.BIGINT,
+    nombre: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
-    id_categoria: {
+    id_instituto: {
       type: DataTypes.BIGINT,
-      allowNull: false,
-    },
-    id_estado: {
-      type: DataTypes.BIGINT,
-      allowNull: false,
-    },
-    id_orienatdo: {
-      type: DataTypes.BIGINT,
-      allowNull: false,
-    },
-    id_orienatdor: {
-      type: DataTypes.BIGINT,
-      allowNull: false,
-    },
-    motivo: {
-      type: DataTypes.STRING(2048),
       allowNull: false,
     },
     is_deleted: {
@@ -47,11 +31,11 @@ const Seguimiento = sequelize.define(
     },
   },
   {
-    tableName: 'Seguimientos',
+    tableName: 'Carreras',
     timestamps: true,
     paranoid: true,
     underscored: true,
   },
 );
 
-module.exports = Seguimiento;
+module.exports = Carrera;
