@@ -1,6 +1,6 @@
 const express = require('express');
-const sequelize = require('./src/database/config/database.js');
-const router = require('./src/database/routes/index.js');
+const sequelize = require('./database/config/database.js');
+const router = require('./routes');
 
 const BASEROUTE = process.env.BASE_ROUTE;
 const ENV = process.env.ENV;
