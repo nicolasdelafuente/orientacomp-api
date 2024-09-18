@@ -10,7 +10,7 @@ const sequelize = new Sequelize({
   port: parseInt(process.env.DB_PORT || '3306', 10),
   database: process.env.DB_NAME || 'orientacompDevelopment',
   username: process.env.DB_USER || 'root',
-  password: process.env.DB_PASSWORD || '',
+  password: process.env.DB_PASSWORD || 'root123',
   logging: true,
   models: [path.join(__dirname, '/../models/*.model.js')],
   timezone: 'America/Argentina/Buenos_Aires',
