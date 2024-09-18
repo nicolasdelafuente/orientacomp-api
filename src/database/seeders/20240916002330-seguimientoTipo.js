@@ -8,7 +8,6 @@ const path = require('path');
 const dataPath = path.resolve(__dirname, '../data/seguimientoTipo.js');
 const tableName = 'TiposDeSeguimientos';
 
-/** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface) {
     try {

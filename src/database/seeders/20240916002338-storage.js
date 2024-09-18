@@ -8,7 +8,6 @@ const path = require('path');
 const dataPath = path.resolve(__dirname, '../data/storage.js');
 const tableName = 'Storages';
 
-/** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface) {
     try {

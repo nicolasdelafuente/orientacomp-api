@@ -8,7 +8,6 @@ const path = require('path');
 const dataPath = path.resolve(__dirname, '../data/provincia.js');
 const tableName = 'Provincias';
 
-/** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface) {
     try {

@@ -5,10 +5,9 @@ const {
   insertData,
 } = require('../../utils/migration.util.js');
 const path = require('path');
-const dataPath = path.resolve(__dirname, '../data/carrera.datajs');
+const dataPath = path.resolve(__dirname, '../data/carrera.data.js');
 const tableName = 'Carreras';
 
-/** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface) {
     try {
