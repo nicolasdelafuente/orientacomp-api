@@ -1,30 +1,12 @@
 const Pais = require('../database/models/Pais.model');
-
-const Model = Pais;
+const { getAll } = require('./utils/genericController');
 
 const getPaises = async (req, res) => {
-  try {
-    //TODO throw new Error('Forzando un error para pruebas');
-    const paises = await Model.findAll({
-      where: {
-        is_deleted: false,
-      },
-      attributes: {
-        exclude: [
-          'is_deleted',
-          'deleted_by',
-          'deleted_at',
-          'created_at',
-          'updated_at',
-        ],
-      },
-      order: [['id', 'DESC']],
-    });
+  const options = {
+    excludeDefaultAttributes: true,
+  };
 
-    res.json({ data: paises });
-  } catch (error) {
-    console.error(error);
-  }
+  await getAll(Pais, req, res, options);
 };
 
 module.exports = {
