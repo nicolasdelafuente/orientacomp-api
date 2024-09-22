@@ -8,7 +8,6 @@ const routesPath = path.join(__dirname);
 fs.readdirSync(routesPath).forEach(file => {
   if (file !== 'index.js' && file.endsWith('.js')) {
     const routeName = file.split('.')[0];
-    console.log(`Loading route: ${routeName}`);
     const route = require(path.join(routesPath, file));
     router.use(`/${routeName}`, route);
   }

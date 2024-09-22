@@ -1,7 +1,6 @@
 const express = require('express');
-const { getPaises } = require('../controllers/pais.controller');
-
 const router = express.Router();
+const { getPaises } = require('../controllers/pais.controller');
 
 router.get('/', getPaises);
 
