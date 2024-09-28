@@ -3,6 +3,7 @@ const {
   getAll,
   getOne,
   create,
+  update,
   softDelete,
 } = require('./utils/genericController');
 
@@ -41,6 +42,10 @@ const createPais = async (req, res) => {
   await create(Pais, req, res);
 };
 
+const updatePais = async (req, res) => {
+  await update(Pais, req, res);
+};
+
 const deletePais = async (req, res) => {
   await softDelete(Pais, req, res);
 };
@@ -50,5 +55,6 @@ module.exports = {
   getAllPaises,
   getPaisById,
   createPais,
+  updatePais,
   deletePais,
 };
