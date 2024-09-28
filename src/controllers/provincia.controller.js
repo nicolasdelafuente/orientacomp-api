@@ -1,7 +1,12 @@
 const { Op } = require('sequelize');
 const Provincia = require('../database/models/Provincia.model');
 const Pais = require('../database/models/Pais.model');
-const { getAll, getOne, create } = require('./utils/genericController');
+const {
+  getAll,
+  getOne,
+  create,
+  softDelete,
+} = require('./utils/genericController');
 
 const commonOptions = {
   relations: [
@@ -52,9 +57,14 @@ const createProvincia = async (req, res) => {
   await create(Provincia, req, res);
 };
 
+const deleteProvincia = async (req, res) => {
+  await softDelete(Provincia, req, res);
+};
+
 module.exports = {
   getProvincias,
   getAllProvincias,
   getProvinciaById,
   createProvincia,
+  deleteProvincia,
 };
