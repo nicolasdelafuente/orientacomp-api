@@ -1,7 +1,7 @@
 const { Op } = require('sequelize');
 const Provincia = require('../database/models/Provincia.model');
 const Pais = require('../database/models/Pais.model');
-const { getAll, getOne } = require('./utils/genericController');
+const { getAll, getOne, create } = require('./utils/genericController');
 
 const commonOptions = {
   relations: [
@@ -48,8 +48,13 @@ const getProvinciaById = async (req, res) => {
   await getOne(Provincia, req, res, options);
 };
 
+const createProvincia = async (req, res) => {
+  await create(Provincia, req, res);
+};
+
 module.exports = {
   getProvincias,
   getAllProvincias,
   getProvinciaById,
+  createProvincia,
 };
