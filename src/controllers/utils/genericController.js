@@ -85,13 +85,13 @@ const getOne = async (Model, req, res, options = {}) => {
     const item = await Model.findOne(queryOptions);
 
     if (!item) {
-      return res.status(404).json({ error: 'Item no encontrado' });
+      return res.status(404).json({ error: 'Item not found' });
     }
 
     res.json({ data: item });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Error interno del servidor' });
+    res.status(500).json({ error: 'Internal server error' });
   }
 };
 
