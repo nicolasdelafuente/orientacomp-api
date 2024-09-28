@@ -1,5 +1,5 @@
 const Pais = require('../database/models/Pais.model');
-const { getAll, getOne } = require('./utils/genericController');
+const { getAll, getOne, create } = require('./utils/genericController');
 
 const getPaises = async (req, res) => {
   const options = {
@@ -32,8 +32,13 @@ const getPaisById = async (req, res) => {
   await getOne(Pais, req, res, options);
 };
 
+const createPais = async (req, res) => {
+  await create(Pais, req, res);
+};
+
 module.exports = {
   getPaises,
   getAllPaises,
   getPaisById,
+  createPais,
 };
