@@ -1,5 +1,3 @@
-const { Op } = require('sequelize');
-
 const getAll = async (Model, req, res, options = {}) => {
   try {
     const {
