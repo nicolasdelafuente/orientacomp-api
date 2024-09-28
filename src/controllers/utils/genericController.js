@@ -132,6 +132,71 @@ const create = async (Model, req, res) => {
   }
 };
 
+const update = async (Model, req, res) => {
+  const transaction = await Model.sequelize.transaction();
+
+  try {
+    const id = req.params.id;
+    const item = await Model.findByPk(id);
+
+    if (!item) {
+      await transaction.rollback();
+      return res.status(404).json({ error: 'Item not found' });
+    }
+
+    if (item.is_deleted) {
+      await transaction.rollback();
+      return res.status(400).json({
+        error: 'Cannot update a deleted item',
+      });
+    }
+
+    // Validar asociaciones si existen
+    if (Object.keys(Model.associations).length > 0) {
+      const associationErrors = await validateAssociations(Model, req.body);
+      if (associationErrors.length > 0) {
+        await transaction.rollback();
+        return res
+          .status(400)
+          .json({ error: 'Validation error', details: associationErrors });
+      }
+    }
+
+    const protectedFields = [
+      'id',
+      'is_deleted',
+      'deleted_by',
+      'deleted_at',
+      'created_at',
+      'updated_at',
+    ];
+
+    const filteredData = Object.fromEntries(
+      Object.entries(req.body).filter(
+        ([key]) => !protectedFields.includes(key) && key in Model.rawAttributes,
+      ),
+    );
+
+    filteredData.updated_at = new Date();
+
+    await item.update(filteredData, { transaction });
+
+    const updatedItem = await Model.findByPk(id, { transaction });
+
+    await transaction.commit();
+    res.json({ data: updatedItem });
+  } catch (error) {
+    await transaction.rollback();
+    console.error(error);
+    if (error.name === 'SequelizeValidationError') {
+      return res
+        .status(400)
+        .json({ error: 'Validation error', details: error.errors });
+    }
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
+
 const softDelete = async (Model, req, res) => {
   const transaction = await Model.sequelize.transaction();
 
@@ -234,5 +299,6 @@ module.exports = {
   getAll,
   getOne,
   create,
+  update,
   softDelete,
 };
