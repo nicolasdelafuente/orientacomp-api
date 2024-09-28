@@ -5,6 +5,7 @@ const {
   getAll,
   getOne,
   create,
+  update,
   softDelete,
 } = require('./utils/genericController');
 
@@ -57,6 +58,10 @@ const createProvincia = async (req, res) => {
   await create(Provincia, req, res);
 };
 
+const updateProvincia = async (req, res) => {
+  await update(Provincia, req, res);
+};
+
 const deleteProvincia = async (req, res) => {
   await softDelete(Provincia, req, res);
 };
@@ -66,5 +71,6 @@ module.exports = {
   getAllProvincias,
   getProvinciaById,
   createProvincia,
+  updateProvincia,
   deleteProvincia,
 };
