@@ -1,3 +1,5 @@
+const { Op } = require('sequelize');
+
 const getAll = async (Model, req, res, options = {}) => {
   try {
     const {
@@ -132,6 +134,47 @@ const create = async (Model, req, res) => {
   }
 };
 
+const softDelete = async (Model, req, res) => {
+  const transaction = await Model.sequelize.transaction();
+
+  try {
+    const id = req.params.id;
+    const item = await Model.findByPk(id);
+
+    if (!item) {
+      await transaction.rollback();
+      return res.status(404).json({ error: 'Item not found' });
+    }
+
+    const dependencies = await checkDependencies(Model, id);
+    if (dependencies.length > 0) {
+      await transaction.rollback();
+      return res.status(400).json({
+        error: 'Cannot delete item due to existing dependencies',
+        dependencies,
+      });
+    }
+
+    await item.update(
+      {
+        is_deleted: true,
+        deleted_at: new Date(),
+        deleted_by: req.user ? req.user.id : null,
+      },
+      { transaction },
+      // Asegura que esta operación sea parte de la transacción actual.
+      // Esto garantiza la integridad de los datos y permite revertir todos los cambios si ocurre un error en cualquier parte del proceso.
+    );
+
+    await transaction.commit();
+    res.json({ message: 'Item soft deleted successfully' });
+  } catch (error) {
+    await transaction.rollback();
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
+
 const validateAssociations = async (Model, data) => {
   const associations = Object.values(Model.associations);
   const errors = [];
@@ -162,8 +205,36 @@ const validateAssociations = async (Model, data) => {
   return errors;
 };
 
+const checkDependencies = async (Model, id) => {
+  const dependencies = [];
+
+  for (const associationName in Model.associations) {
+    const association = Model.associations[associationName];
+    if (
+      association.associationType === 'HasMany' ||
+      association.associationType === 'HasOne'
+    ) {
+      const count = await association.target.count({
+        where: {
+          [association.foreignKey]: id,
+          is_deleted: false,
+        },
+      });
+      if (count > 0) {
+        dependencies.push({
+          model: association.target.name,
+          count: count,
+        });
+      }
+    }
+  }
+
+  return dependencies;
+};
+
 module.exports = {
   getAll,
   getOne,
   create,
+  softDelete,
 };
