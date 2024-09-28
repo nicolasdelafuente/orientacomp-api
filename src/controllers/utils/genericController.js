@@ -95,7 +95,75 @@ const getOne = async (Model, req, res, options = {}) => {
   }
 };
 
+const create = async (Model, req, res) => {
+  try {
+    if (Object.keys(Model.associations).length > 0) {
+      const associationErrors = await validateAssociations(Model, req.body);
+      if (associationErrors.length > 0) {
+        return res
+          .status(400)
+          .json({ error: 'Validation error', details: associationErrors });
+      }
+    }
+
+    const newItem = await Model.create(req.body);
+
+    const queryOptions =
+      Object.keys(Model.associations).length > 0
+        ? {
+            include: Object.values(Model.associations).map(association => ({
+              model: association.target,
+              as: association.as,
+            })),
+          }
+        : {};
+
+    const createdItem = await Model.findByPk(newItem.id, queryOptions);
+
+    res.status(201).json({ data: createdItem });
+  } catch (error) {
+    console.error(error);
+    if (error.name === 'SequelizeValidationError') {
+      return res
+        .status(400)
+        .json({ error: 'Validation error', details: error.errors });
+    }
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
+
+const validateAssociations = async (Model, data) => {
+  const associations = Object.values(Model.associations);
+  const errors = [];
+
+  for (const association of associations) {
+    if (association.associationType === 'BelongsTo') {
+      const foreignKey = association.foreignKey;
+      const targetModel = association.target;
+      const foreignId = data[foreignKey];
+
+      if (foreignId) {
+        const associatedItem = await targetModel.findOne({
+          where: {
+            id: foreignId,
+            is_deleted: false,
+          },
+        });
+
+        if (!associatedItem) {
+          errors.push(
+            `${association.as} with id ${foreignId} does not exist or is deleted.`,
+          );
+        }
+      }
+    }
+  }
+
+  return errors;
+};
+
 module.exports = {
   getAll,
   getOne,
+  create,
 };
