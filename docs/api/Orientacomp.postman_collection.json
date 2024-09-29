@@ -1,0 +1,2518 @@
+{
+  "info": {
+    "_postman_id": "9498c625-1e6c-46df-92f2-2b4078c17599",
+    "name": "Orientacomp",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34020523"
+  },
+  "item": [
+    {
+      "name": "Carreras",
+      "item": [
+        {
+          "name": "GET",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/carreras",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "carreras"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/carreras/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "carreras",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/carreras/2",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "carreras",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById All",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/carreras/2/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "carreras",
+                "2",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"Prueba\",\r\n    \"nacionalidad\": \"Pruebiano\",\r\n    \"iso\": \"PRU\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/carreras",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "carreras"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"casa\",\r\n    \"iso\": \"kjok\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/carreras/3",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "carreras",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/carreras/27",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "carreras",
+                "27"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Categorias",
+      "item": [
+        {
+          "name": "GET",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/categorias",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "categorias"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/categorias/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "categorias",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/categorias/2",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "categorias",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById All",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/categorias/2/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "categorias",
+                "2",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"Prueba\",\r\n    \"nacionalidad\": \"Pruebiano\",\r\n    \"iso\": \"PRU\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/categorias",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "categorias"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"casa\",\r\n    \"iso\": \"kjok\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/categorias/3",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "categorias",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/categorias/27",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "categorias",
+                "27"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Entrevistas",
+      "item": [
+        {
+          "name": "GET",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/entrevistas",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "entrevistas"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/entrevistas/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "entrevistas",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/entrevistas/2",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "entrevistas",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById All",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/entrevistas/2/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "entrevistas",
+                "2",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"Prueba\",\r\n    \"nacionalidad\": \"Pruebiano\",\r\n    \"iso\": \"PRU\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/entrevistas",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "entrevistas"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"casa\",\r\n    \"iso\": \"kjok\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/entrevistas/3",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "entrevistas",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/entrevistas/27",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "entrevistas",
+                "27"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Estados",
+      "item": [
+        {
+          "name": "GET",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/estados",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "estados"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/estados/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "estados",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/estados/2",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "estados",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById All",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/estados/2/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "estados",
+                "2",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"Prueba\",\r\n    \"nacionalidad\": \"Pruebiano\",\r\n    \"iso\": \"PRU\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/estados",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "estados"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"casa\",\r\n    \"iso\": \"kjok\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/estados/3",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "estados",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/estados/27",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "estados",
+                "27"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Generos",
+      "item": [
+        {
+          "name": "GET",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/generos",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "generos"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/generos/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "generos",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/generos/2",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "generos",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById All",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/generos/2/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "generos",
+                "2",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"Prueba\",\r\n    \"nacionalidad\": \"Pruebiano\",\r\n    \"iso\": \"PRU\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/generos",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "generos"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"casa\",\r\n    \"iso\": \"kjok\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/generos/3",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "generos",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/generos/27",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "generos",
+                "27"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Institutos",
+      "item": [
+        {
+          "name": "GET",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/institutos",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "institutos"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/institutos/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "institutos",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/institutos/2",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "institutos",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/institutos/2/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "institutos",
+                "2",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"prueba\",\r\n    \"id_pais\": \"10000\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/institutos",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "institutos"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"aaaa\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/institutos/5",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "institutos",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/institutos/1227",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "institutos",
+                "1227"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Paises",
+      "item": [
+        {
+          "name": "GET",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/paises",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "paises"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/paises/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "paises",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/paises/202",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "paises",
+                "202"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/paises/202/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "paises",
+                "202",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"Prueba\",\r\n    \"nacionalidad\": \"Pruebiano\",\r\n    \"iso\": \"PRU\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/paises",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "paises"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"casarito\",\r\n    \"iso\": \"kjok\",\r\n    \"is_deleted\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/paises/202",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "paises",
+                "202"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/paises/202",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "paises",
+                "202"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Personas",
+      "item": [
+        {
+          "name": "GET",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/personas",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "personas"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/personas/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "personas",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/personas/2",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "personas",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/personas/202/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "personas",
+                "202",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"Prueba\",\r\n    \"nacionalidad\": \"Pruebiano\",\r\n    \"iso\": \"PRU\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/personas",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "personas"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"casarito\",\r\n    \"iso\": \"kjok\",\r\n    \"is_deleted\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/personas/202",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "personas",
+                "202"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/personas/202",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "personas",
+                "202"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Provincias",
+      "item": [
+        {
+          "name": "GET",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/provincias",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "provincias"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/provincias/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "provincias",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/provincias/2",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "provincias",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/provincias/2/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "provincias",
+                "2",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"prueba\",\r\n    \"id_pais\": \"10000\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/provincias",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "provincias"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"aaaa\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/provincias/5",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "provincias",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/provincias/1227",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "provincias",
+                "1227"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Roles",
+      "item": [
+        {
+          "name": "GET",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/roles",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "roles"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/roles/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "roles",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/roles/2",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "roles", "2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/roles/2/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "roles",
+                "2",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"Prueba\",\r\n    \"nacionalidad\": \"Pruebiano\",\r\n    \"iso\": \"PRU\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/roles",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "roles"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"casa\",\r\n    \"iso\": \"kjok\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/roles/3",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "roles", "3"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/roles/27",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "roles", "27"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Seguimientos",
+      "item": [
+        {
+          "name": "GET",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/seguimientos",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "seguimientos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/seguimientos/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "seguimientos",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/seguimientos/2",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "seguimientos",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/seguimientos/2/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "seguimientos",
+                "2",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"Prueba\",\r\n    \"nacionalidad\": \"Pruebiano\",\r\n    \"iso\": \"PRU\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/seguimientos",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "seguimientos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"casa\",\r\n    \"iso\": \"kjok\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/seguimientos/3",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "seguimientos",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/seguimientos/27",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "seguimientos",
+                "27"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Storages",
+      "item": [
+        {
+          "name": "GET",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/storages",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "storages"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/storages/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "storages",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/storages/2",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "storages",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/storages/2/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "storages",
+                "2",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"Prueba\",\r\n    \"nacionalidad\": \"Pruebiano\",\r\n    \"iso\": \"PRU\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/storages",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "storages"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"casa\",\r\n    \"iso\": \"kjok\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/storages/3",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "storages",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/storages/27",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "storages",
+                "27"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "TiposDeDocumentos",
+      "item": [
+        {
+          "name": "GET",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/tiposDeDocumentos",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "tiposDeDocumentos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/tiposDeDocumentos/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "tiposDeDocumentos",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/tiposDeDocumentos/2",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "tiposDeDocumentos",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/tiposDeDocumentos/2/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "tiposDeDocumentos",
+                "2",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"Prueba\",\r\n    \"nacionalidad\": \"Pruebiano\",\r\n    \"iso\": \"PRU\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/tiposDeDocumentos",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "tiposDeDocumentos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"casa\",\r\n    \"iso\": \"kjok\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/tiposDeDocumentos/3",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "tiposDeDocumentos",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/tiposDeDocumentos/27",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "tiposDeDocumentos",
+                "27"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "TiposDeSeguimientos",
+      "item": [
+        {
+          "name": "GET",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/tiposDeSeguimientos",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "tiposDeSeguimientos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/tiposDeSeguimientos/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "tiposDeSeguimientos",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/tiposDeSeguimientos/2",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "tiposDeSeguimientos",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/tiposDeSeguimientos/2/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "tiposDeSeguimientos",
+                "2",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"Prueba\",\r\n    \"nacionalidad\": \"Pruebiano\",\r\n    \"iso\": \"PRU\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/tiposDeSeguimientos",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "tiposDeSeguimientos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"casa\",\r\n    \"iso\": \"kjok\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/tiposDeSeguimientos/3",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "tiposDeSeguimientos",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/tiposDeSeguimientos/27",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "tiposDeSeguimientos",
+                "27"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Usuarios",
+      "item": [
+        {
+          "name": "GET",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/usuarios",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "usuarios"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/usuarios/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "usuarios",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/usuarios/2",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "usuarios",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GETById All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/usuarios/2/all",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "usuarios",
+                "2",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"Prueba\",\r\n    \"nacionalidad\": \"Pruebiano\",\r\n    \"iso\": \"PRU\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/usuarios",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": ["{{BASEROUTE}}", "{{ENV}}", "{{VERSION}}", "usuarios"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PATCH",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"casa\",\r\n    \"iso\": \"kjok\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/usuarios/3",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "usuarios",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}:{{PORT}}/{{BASEROUTE}}/{{ENV}}/{{VERSION}}/usuarios/27",
+              "host": ["{{URL}}"],
+              "port": "{{PORT}}",
+              "path": [
+                "{{BASEROUTE}}",
+                "{{ENV}}",
+                "{{VERSION}}",
+                "usuarios",
+                "27"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
