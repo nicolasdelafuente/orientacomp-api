@@ -1,304 +1,142 @@
-const getAll = async (Model, req, res, options = {}) => {
-  try {
-    const {
-      excludeDefaultAttributes = true,
-      relations = [],
-      excludeAttributes = [],
-      where = { is_deleted: false },
-      order = [['id', 'ASC']],
-    } = options;
+const createGenericController = (Model, options = {}) => {
+  const { relations = [], excludeAttributes = [] } = options;
 
-    const queryOptions = {
-      where,
-      order,
-    };
+  const commonOptions = {
+    include: relations,
+    attributes: { exclude: excludeAttributes },
+  };
 
-    if (excludeDefaultAttributes) {
-      queryOptions.attributes = {
-        exclude: [
-          'is_deleted',
-          'deleted_by',
-          'deleted_at',
-          'created_at',
-          'updated_at',
-          ...excludeAttributes,
-        ],
-      };
-    } else if (excludeAttributes.length > 0) {
-      queryOptions.attributes = { exclude: excludeAttributes };
-    }
+  const deletionFields = [
+    'is_deleted',
+    'deleted_by',
+    'deleted_at',
+    'created_at',
+    'updated_at',
+  ];
 
-    if (relations.length > 0) {
-      queryOptions.include = relations;
-    }
+  const protectedFields = [
+    'is_deleted',
+    'deleted_by',
+    'created_at',
+    'updated_at',
+    'deleted_at',
+  ];
 
-    const items = await Model.findAll(queryOptions);
+  const getItemsBase = async (includeDeleted = false) => {
+    let whereClause = includeDeleted ? {} : { is_deleted: false };
+    let attributes = includeDeleted ? {} : { exclude: deletionFields };
 
-    res.json({ data: items });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-};
-
-const getOne = async (Model, req, res, options = {}) => {
-  try {
-    const {
-      excludeDefaultAttributes = true,
-      relations = [],
-      excludeAttributes = [],
-      where = { is_deleted: false },
-      searchFields = ['id'],
-    } = options;
-
-    const queryOptions = {
-      where: {
-        ...where,
+    return {
+      ...commonOptions,
+      where: whereClause,
+      attributes: {
+        ...attributes,
+        exclude: [...(attributes.exclude || []), ...excludeAttributes],
       },
     };
+  };
 
-    searchFields.forEach(field => {
-      if (req.params[field]) {
-        queryOptions.where[field] = req.params[field];
+  return {
+    getItems: async (req, res) => {
+      try {
+        const includeDeleted = req.path.endsWith('/all');
+        const options = await getItemsBase(includeDeleted);
+        const items = await Model.findAll(options);
+        res.json({ data: items });
+      } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal server error' });
       }
-    });
+    },
 
-    if (excludeDefaultAttributes) {
-      queryOptions.attributes = {
-        exclude: [
-          'is_deleted',
-          'deleted_by',
-          'deleted_at',
-          'created_at',
-          'updated_at',
-          ...excludeAttributes,
-        ],
-      };
-    } else if (excludeAttributes.length > 0) {
-      queryOptions.attributes = { exclude: excludeAttributes };
-    }
-
-    if (relations.length > 0) {
-      queryOptions.include = relations;
-    }
-
-    const item = await Model.findOne(queryOptions);
-
-    if (!item) {
-      return res.status(404).json({ error: 'Item not found' });
-    }
-
-    res.json({ data: item });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-};
-
-const create = async (Model, req, res) => {
-  try {
-    if (Object.keys(Model.associations).length > 0) {
-      const associationErrors = await validateAssociations(Model, req.body);
-      if (associationErrors.length > 0) {
-        return res
-          .status(400)
-          .json({ error: 'Validation error', details: associationErrors });
-      }
-    }
-
-    const newItem = await Model.create(req.body);
-
-    const queryOptions =
-      Object.keys(Model.associations).length > 0
-        ? {
-            include: Object.values(Model.associations).map(association => ({
-              model: association.target,
-              as: association.as,
-            })),
-          }
-        : {};
-
-    const createdItem = await Model.findByPk(newItem.id, queryOptions);
-
-    res.status(201).json({ data: createdItem });
-  } catch (error) {
-    console.error(error);
-    if (error.name === 'SequelizeValidationError') {
-      return res
-        .status(400)
-        .json({ error: 'Validation error', details: error.errors });
-    }
-    res.status(500).json({ error: 'Internal server error' });
-  }
-};
-
-const update = async (Model, req, res) => {
-  const transaction = await Model.sequelize.transaction();
-
-  try {
-    const id = req.params.id;
-    const item = await Model.findByPk(id);
-
-    if (!item) {
-      await transaction.rollback();
-      return res.status(404).json({ error: 'Item not found' });
-    }
-
-    if (item.is_deleted) {
-      await transaction.rollback();
-      return res.status(400).json({
-        error: 'Cannot update a deleted item',
-      });
-    }
-
-    // Validar asociaciones si existen
-    if (Object.keys(Model.associations).length > 0) {
-      const associationErrors = await validateAssociations(Model, req.body);
-      if (associationErrors.length > 0) {
-        await transaction.rollback();
-        return res
-          .status(400)
-          .json({ error: 'Validation error', details: associationErrors });
-      }
-    }
-
-    const protectedFields = [
-      'id',
-      'is_deleted',
-      'deleted_by',
-      'deleted_at',
-      'created_at',
-      'updated_at',
-    ];
-
-    const filteredData = Object.fromEntries(
-      Object.entries(req.body).filter(
-        ([key]) => !protectedFields.includes(key) && key in Model.rawAttributes,
-      ),
-    );
-
-    filteredData.updated_at = new Date();
-
-    await item.update(filteredData, { transaction });
-
-    const updatedItem = await Model.findByPk(id, { transaction });
-
-    await transaction.commit();
-    res.json({ data: updatedItem });
-  } catch (error) {
-    await transaction.rollback();
-    console.error(error);
-    if (error.name === 'SequelizeValidationError') {
-      return res
-        .status(400)
-        .json({ error: 'Validation error', details: error.errors });
-    }
-    res.status(500).json({ error: 'Internal server error' });
-  }
-};
-
-const softDelete = async (Model, req, res) => {
-  const transaction = await Model.sequelize.transaction();
-
-  try {
-    const id = req.params.id;
-    const item = await Model.findByPk(id);
-
-    if (!item) {
-      await transaction.rollback();
-      return res.status(404).json({ error: 'Item not found' });
-    }
-
-    const dependencies = await checkDependencies(Model, id);
-    if (dependencies.length > 0) {
-      await transaction.rollback();
-      return res.status(400).json({
-        error: 'Cannot delete item due to existing dependencies',
-        dependencies,
-      });
-    }
-
-    await item.update(
-      {
-        is_deleted: true,
-        deleted_at: new Date(),
-        deleted_by: req.user ? req.user.id : null,
-      },
-      { transaction },
-      // Asegura que esta operación sea parte de la transacción actual.
-      // Esto garantiza la integridad de los datos y permite revertir todos los cambios si ocurre un error en cualquier parte del proceso.
-    );
-
-    await transaction.commit();
-    res.json({ message: 'Item soft deleted successfully' });
-  } catch (error) {
-    await transaction.rollback();
-    console.error(error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-};
-
-const validateAssociations = async (Model, data) => {
-  const associations = Object.values(Model.associations);
-  const errors = [];
-
-  for (const association of associations) {
-    if (association.associationType === 'BelongsTo') {
-      const foreignKey = association.foreignKey;
-      const targetModel = association.target;
-      const foreignId = data[foreignKey];
-
-      if (foreignId) {
-        const associatedItem = await targetModel.findOne({
-          where: {
-            id: foreignId,
-            is_deleted: false,
-          },
-        });
-
-        if (!associatedItem) {
-          errors.push(
-            `${association.as} with id ${foreignId} does not exist or is deleted.`,
-          );
+    getItemById: async (req, res) => {
+      try {
+        const includeDeleted = req.path.endsWith('/all');
+        const options = await getItemsBase(includeDeleted);
+        options.where = { ...options.where, id: req.params.id };
+        const item = await Model.findOne(options);
+        if (item) {
+          res.json({ data: item });
+        } else {
+          res.status(404).json({ error: 'Item not found' });
         }
+      } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal server error' });
       }
-    }
-  }
+    },
 
-  return errors;
-};
+    createItem: async (req, res) => {
+      try {
+        const item = await Model.create(req.body);
+        res.status(201).json({ data: item });
+      } catch (error) {
+        console.error(error);
+        res.status(400).json({ error: 'Bad request' });
+      }
+    },
 
-const checkDependencies = async (Model, id) => {
-  const dependencies = [];
-
-  for (const associationName in Model.associations) {
-    const association = Model.associations[associationName];
-    if (
-      association.associationType === 'HasMany' ||
-      association.associationType === 'HasOne'
-    ) {
-      const count = await association.target.count({
-        where: {
-          [association.foreignKey]: id,
-          is_deleted: false,
-        },
-      });
-      if (count > 0) {
-        dependencies.push({
-          model: association.target.name,
-          count: count,
+    updateItem: async (req, res) => {
+      try {
+        const item = await Model.findOne({
+          where: { id: req.params.id, is_deleted: false },
         });
+
+        if (!item) {
+          return res
+            .status(404)
+            .json({ error: 'Item not found or already deleted' });
+        }
+        const updateData = Object.keys(req.body).reduce((acc, key) => {
+          if (!protectedFields.includes(key)) {
+            acc[key] = req.body[key];
+          }
+          return acc;
+        }, {});
+
+        const [updated] = await Model.update(updateData, {
+          where: { id: req.params.id, is_deleted: false },
+        });
+
+        if (updated) {
+          const updatedItem = await Model.findByPk(
+            req.params.id,
+            commonOptions,
+          );
+          res.json({ data: updatedItem });
+        } else {
+          res.status(400).json({ error: 'Update failed' });
+        }
+      } catch (error) {
+        console.error(error);
+        res.status(400).json({ error: 'Bad request' });
       }
-    }
-  }
+    },
 
-  return dependencies;
+    deleteItem: async (req, res) => {
+      try {
+        const item = await Model.findOne({
+          where: { id: req.params.id, is_deleted: false },
+        });
+
+        if (!item) {
+          return res
+            .status(404)
+            .json({ error: 'Item not found or already deleted' });
+        }
+
+        await Model.update(
+          { is_deleted: true },
+          { where: { id: req.params.id } },
+        );
+
+        res.json({ message: 'Item deleted successfully' });
+      } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal server error' });
+      }
+    },
+  };
 };
 
-module.exports = {
-  getAll,
-  getOne,
-  create,
-  update,
-  softDelete,
-};
+module.exports = { createGenericController };
