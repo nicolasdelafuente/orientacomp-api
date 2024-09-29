@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database.js');
+const { commonModelOptions } = require('../config/modelOptions');
 
 const TipoDeDocumento = sequelize.define(
   'TipoDeDocumento',
@@ -21,16 +22,10 @@ const TipoDeDocumento = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
-    deleted_at: {
-      type: DataTypes.DATE,
-      allowNull: true,
-    },
   },
   {
+    ...commonModelOptions,
     tableName: 'TiposDeDocumentos',
-    timestamps: true,
-    paranoid: true,
-    underscored: true,
   },
 );
 

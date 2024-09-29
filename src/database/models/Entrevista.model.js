@@ -2,25 +2,27 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database.js');
 const { commonModelOptions } = require('../config/modelOptions');
 
-const Usuario = sequelize.define(
-  'Usuario',
+const Entrevista = sequelize.define(
+  'Entrevista',
   {
     id: {
       type: DataTypes.BIGINT,
       autoIncrement: true,
       primaryKey: true,
     },
-    id_persona: {
+    id_seguimiento: {
       type: DataTypes.BIGINT,
       allowNull: false,
     },
-    id_rol: {
+    id_orientador: {
       type: DataTypes.BIGINT,
       allowNull: false,
     },
-    password: {
+    observacion: {
       type: DataTypes.STRING,
-      allowNull: false,
+    },
+    accion: {
+      type: DataTypes.DATE,
     },
     is_deleted: {
       type: DataTypes.BOOLEAN,
@@ -33,8 +35,8 @@ const Usuario = sequelize.define(
   },
   {
     ...commonModelOptions,
-    tableName: 'Usuarios',
+    tableName: 'Entrevistas',
   },
 );
 
-module.exports = Usuario;
+module.exports = Entrevista;

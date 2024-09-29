@@ -1,5 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database.js');
+const { commonModelOptions } = require('../config/modelOptions');
+
 
 const Carrera = sequelize.define(
   'Carrera',
@@ -31,10 +33,8 @@ const Carrera = sequelize.define(
     },
   },
   {
+    ...commonModelOptions,
     tableName: 'Carreras',
-    timestamps: true,
-    paranoid: true,
-    underscored: true,
   },
 );
 

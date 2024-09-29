@@ -22,6 +22,10 @@ const Provincia = sequelize.define(
       type: DataTypes.BOOLEAN,
       defaultValue: false,
     },
+    deleted_by: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },    
   },
   {
     ...commonModelOptions,

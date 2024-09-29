@@ -2,23 +2,19 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database.js');
 const { commonModelOptions } = require('../config/modelOptions');
 
-const Usuario = sequelize.define(
-  'Usuario',
+const Categoria = sequelize.define(
+  'Categoria',
   {
     id: {
       type: DataTypes.BIGINT,
       autoIncrement: true,
       primaryKey: true,
     },
-    id_persona: {
-      type: DataTypes.BIGINT,
+    nombre: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
-    id_rol: {
-      type: DataTypes.BIGINT,
-      allowNull: false,
-    },
-    password: {
+    color: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -33,8 +29,8 @@ const Usuario = sequelize.define(
   },
   {
     ...commonModelOptions,
-    tableName: 'Usuarios',
+    tableName: 'Categorias',
   },
 );
 
-module.exports = Usuario;
+module.exports = Categoria;
