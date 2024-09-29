@@ -25,7 +25,7 @@ const Provincia = sequelize.define(
     deleted_by: {
       type: DataTypes.INTEGER,
       allowNull: true,
-    },    
+    },
   },
   {
     ...commonModelOptions,

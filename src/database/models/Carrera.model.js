@@ -2,7 +2,6 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database.js');
 const { commonModelOptions } = require('../config/modelOptions');
 
-
 const Carrera = sequelize.define(
   'Carrera',
   {
