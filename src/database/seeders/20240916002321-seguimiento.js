@@ -5,7 +5,7 @@ const {
   insertData,
 } = require('../../utils/migration.util.js');
 const path = require('path');
-const dataPath = path.resolve(__dirname, '../data/seguimeinto.js');
+const dataPath = path.resolve(__dirname, '../data/seguimiento.js');
 const tableName = 'Seguimientos';
 
 module.exports = {
