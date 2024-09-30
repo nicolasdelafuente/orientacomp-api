@@ -15,10 +15,18 @@ const resetAutoIncrement = async (queryInterface, tableName) => {
   );
 };
 
-const insertData = async (queryInterface, tableName, dataPath) => {
+async function insertData(queryInterface, tableName, dataPath) {
   const data = require(dataPath);
+
+  if (!Array.isArray(data) || data.length === 0) {
+    console.log(
+      `No data to insert for table ${tableName}. Skipping insertion.`,
+    );
+    return;
+  }
+
   await queryInterface.bulkInsert(tableName, data, {});
-};
+}
 
 module.exports = {
   tableExists,
