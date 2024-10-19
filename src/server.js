@@ -1,6 +1,7 @@
 const express = require('express');
 const sequelize = require('./database/config/database.js');
 const router = require('./routes');
+const cors = require('cors');
 
 const BASEROUTE = process.env.BASE_ROUTE;
 const ENV = process.env.ENV;
@@ -29,6 +30,12 @@ async function connectDB() {
 connectDB();
 
 const server = express();
+server.use(
+  cors({
+    origin: 'http://localhost:5173',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  }),
+);
 
 server.use(express.json());
 server.use(FULLBASEROUTE, router);
