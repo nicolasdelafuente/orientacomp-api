@@ -5,6 +5,7 @@ const pluralSingularMap = {
   estados: 'estado',
   generos: 'genero',
   institutos: 'instituto',
+  localidades: 'localidad',
   paises: 'pais',
   personas: 'persona',
   provincias: 'provincia',
