@@ -2,8 +2,8 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database.js');
 const { commonModelOptions } = require('../config/modelOptions.js');
 
-const Provincia = sequelize.define(
-  'Provincia',
+const Localidad = sequelize.define(
+  'Localidad',
   {
     id: {
       type: DataTypes.BIGINT,
@@ -14,7 +14,7 @@ const Provincia = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    id_pais: {
+    id_provincia: {
       type: DataTypes.BIGINT,
       allowNull: false,
     },
@@ -29,8 +29,8 @@ const Provincia = sequelize.define(
   },
   {
     ...commonModelOptions,
-    tableName: 'Provincias',
+    tableName: 'Localidades',
   },
 );
 
-module.exports = Provincia;
+module.exports = Localidad;
