@@ -26,6 +26,15 @@ const createGenericController = (Model, options = {}) => {
     let whereClause = includeDeleted ? {} : { is_deleted: false };
     let attributes = includeDeleted ? {} : { exclude: deletionFields };
 
+    const includeRelations = relations.map(relation => {
+      return {
+        ...relation,
+        attributes: {
+          exclude: [...deletionFields, ...excludeAttributes],
+        },
+      };
+    });
+
     return {
       ...commonOptions,
       where: whereClause,
@@ -33,6 +42,7 @@ const createGenericController = (Model, options = {}) => {
         ...attributes,
         exclude: [...(attributes.exclude || []), ...excludeAttributes],
       },
+      include: includeRelations,
     };
   };
 
